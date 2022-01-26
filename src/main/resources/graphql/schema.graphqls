@@ -1,0 +1,23 @@
+type Query {
+    byZonedDateTime(zonedDateTime: DateTime): TestOutput
+    byOffsetDateTime(offsetDateTime: DateTime): TestOutput
+    byLocalDateTime(localDateTime: DateTime): TestOutput
+}
+
+type Mutation {
+    upsertTest(input: TestInput!): TestOutput
+}
+
+input TestInput {
+    zonedDateTime: DateTime
+    offsetDateTime: DateTime
+    localDateTime: DateTime
+}
+
+type TestOutput {
+    zonedDateTime: DateTime
+    offsetDateTime: DateTime
+    localDateTime: DateTime
+}
+
+scalar DateTime
